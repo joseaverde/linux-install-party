@@ -16,11 +16,13 @@
 \selectlanguage{spanish}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{dirtytalk}
+\usepackage{svg}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
@@ -28,29 +30,31 @@
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    % numbers=left,
+    % numbersep=5pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2
 }
 
 \lstset{style=mystyle}
 \def\edicion{}
-\def\fecha{Octubre 2023}
+\def\fecha{Septiembre 2024}
 
-\title{\textit{Linux404}}
-\subtitle{Instalar Linux}
-\author{José Antonio Verde Jiménez}
-\date{Octubre 2023}
-\github{joseaverde}
+\title{Linux Install Party}
+% \subtitle{Instalar Linux}
+\author{%
+    José Antonio Verde \& Luis Daniel Casais%
+}
+% \date{Septiembre 2024}
+\twitter{guluc3m}
 
-\institute{\edicion \ Talleres del GUL}
+\institute{Grupo de Usuarios de Linux}
 \date{\fecha}
 
 \titlegraphic{img/logo1.png}
@@ -66,6 +70,15 @@
             \tableofcontents
 
         \end{multicols}
+    \end{frame}
+
+
+    \subsection*{¿Dónde encontrar las transparencias?}
+    \begin{frame}[plain]{\subsecname}
+        \centering\qrcode[hyperlink,height=0.5\textwidth]{https://github.com/joseaverde/linux-install-party}
+        \hphantom{}\\
+        \bigskip
+        \url{https://github.com/joseaverde/linux-install-party}
     \end{frame}
 
     %=========================================================================%
@@ -97,9 +110,14 @@
     \subsection{Distros}
     % En realidad os he mentido, hay muchos Linux.
     % ¿Cuál uso?
-    \begin{frame}{\secname}{\subsecname}
-        \textbf{Más populares}
+     \begin{frame}{\subsecname}{}
+        \centering\textbf{Más populares}
         \begin{figure}[b]
+            \centering
+            \begin{subfigure}{.3\textwidth}
+                \centering
+                \includegraphics[width=0.35\textwidth]{img/mint.png}
+            \end{subfigure}
             \centering
             \begin{subfigure}{.3\textwidth}
                 \centering
@@ -107,30 +125,14 @@
             \end{subfigure}
             \begin{subfigure}{.3\textwidth}
                 \centering
-                \includegraphics[width=0.35\textwidth]{img/mint.png}
-            \end{subfigure}
-            \begin{subfigure}{.3\textwidth}
-                \centering
-                \includegraphics[width=0.35\textwidth]{img/endeavour.png}
-            \end{subfigure}
-            \centering
-            \begin{subfigure}{.3\textwidth}
-                \centering
-                \includegraphics[width=0.35\textwidth]{img/debian.png}
-            \end{subfigure}
-            \begin{subfigure}{.3\textwidth}
-                \centering
                 \includegraphics[width=0.35\textwidth]{img/ubuntu.png}
             \end{subfigure}
+            \\\medskip
             \begin{subfigure}{.3\textwidth}
                 \centering
                 \includegraphics[width=0.35\textwidth]{img/manjaro.png}
             \end{subfigure}
             \centering
-            \begin{subfigure}{.3\textwidth}
-                \centering
-                \includegraphics[width=0.35\textwidth]{img/popos.png}
-            \end{subfigure}
             \begin{subfigure}{.3\textwidth}
                 \centering
                 \includegraphics[width=0.35\textwidth]{img/fedora.png}
@@ -140,15 +142,16 @@
                 \includegraphics[width=0.35\textwidth]{img/opensuse.png}
             \end{subfigure}
         \end{figure}
+
+        \medskip
+
         \begin{multicols}{3}
-            \pause
             \centering \textbf{Ciberseguridad}
             \begin{figure}
                 \includegraphics[width=0.1\textwidth]{img/kali.png}
                 \includegraphics[width=0.1\textwidth]{img/parrot.png}
             \end{figure}
             \newpage
-            \pause
             \centering \textbf{Avanzadas}
             \begin{figure}
                 \includegraphics[width=0.07\textwidth]{img/arch.png}
@@ -159,7 +162,6 @@
                 \includegraphics[width=0.07\textwidth]{img/nixos.png}
             \end{figure}
             \newpage
-            \pause
             \centering \textbf{\textit{Otras}}
             \begin{figure}
                 \includegraphics[width=0.07\textwidth]{img/tinycore.png}
@@ -171,17 +173,22 @@
         \end{multicols}
     \end{frame}
 
-    \begin{frame}{\secname}{\subsecname}
+     \begin{frame}{\subsecname}{}
         \centering
         \begin{figure}
-            \includegraphics[width=0.8\textwidth]{img/distrochooser.png}
+            \includegraphics[width=0.5\textwidth]{img/distrochooser.png}
         \end{figure}
         \centering \url{https://distrochooser.de/es}
+        \\\bigskip
+        \begin{figure}
+            \includegraphics[width=0.73\textwidth]{img/distrowatch.png}
+        \end{figure}
+        \centering \url{https://distrowatch.com/}
     \end{frame}
 
     %== ¿Cómo se ve Linux? ==%
     \subsection{¿Cómo se ve Linux?}
-    \begin{frame}{\secname}{\subsecname}
+     \begin{frame}{\subsecname}{}
         \begin{figure}
             \centering
             \begin{subfigure}{.4\textwidth}
@@ -212,26 +219,22 @@
 
     %== ¿Por qué Linux? ==%
     \subsection{¿Por qué Linux?}
-    \begin{frame}{\secname}{\subsecname}
+     \begin{frame}{\subsecname}{}
         \begin{itemize}
-            \item Es fácil de utilizar.
+            \item Es fácil de utilizar
             % Los que nunca han utilizado Linux dicen que es difícil
-            \item Seguro
+            \item Rápido y seguro (revive ordenadores antiguos)
             % Ya ves lo usa mucha gente
-            \item Código abierto
-            \item Rápido
-            \item Revive ordenadores antiguos
-            \item Todo lo que necesites está en la tienda de aplicaciones
             \item Se usa mucho más de lo que parece:
             \begin{itemize}
-                \item El $7.23\%$ de los ordenadores personales.
-                \item El $38.42\%$ de los sistemas embebidos.
-                \item El $77.4\%$ de los servidores
-                \item El $70.8\%$ de los dispositivos móviles
-                \item El $100\%$ de las supercomputadoras.
+                \item El $4.55\%$ de los ordenadores personales
+                % \item El $38.42\%$ de los sistemas embedidos
+                \item El $77.67\%$ de los servidores
+                \item El $70.11\%$ de los dispositivos móviles
+                \item El $100\%$ de los supercomputadores
             \end{itemize}
-            \item Libre de publicidad.
-            \item Respeta tu privacidad.
+            \item Libre de publicidad
+            \item Respeta tu privacidad
         \end{itemize}
     \end{frame}
 
@@ -239,28 +242,25 @@
     \subsection{Falsos mitos}
     \begin{frame}[fragile]{\subsecname}{\secname}
         \begin{itemize}
-            \item \textit{«He oído que necesitas la terminal para todo»}
+            \item \say{\textit{He oído que necesitas la terminal para todo}}
             \pause
             \begin{itemize}
                 \item Tienes una aplicación gráfica para la tienda de aplicaciones
                 \item Puedes personalizar el sistema con un menú gráfico
-                \item Hay aplicaciones para configurar los \textit{drivers}.
+                \item Hay aplicaciones para configurar los \textit{drivers}
             \end{itemize}
             Es una comodidad para el usuario intermedio-avanzado.
-            \item «Los programas de Windows no funcionan en Linux y necesito\ldots»
+            \item \say{\textit{Los programas de Windows no funcionan en Linux y necesito\ldots}}
             \pause
             \begin{itemize}
-                \item Tienes \verb!wine!.
-                \item Hay una base de datos
-                    \href{(WineHQ)}{https://appdb.winehq.org/} con información
-                    de cómo configurar muchas aplicaciones.
+                \item Tienes \href{https://www.winehq.org/}{\underline{Wine}}
+                \item \href{https://appdb.winehq.org/}{\underline{WineHQ}}, base de datos con información de cómo configurar muchas aplicaciones
             \end{itemize}
-            \item «En Linux no se puede jugar a videojuegos»
+            \item \say{\textit{En Linux no se puede jugar a videojuegos}}
             \pause
             \begin{itemize}
-                \item Steam con \textit{Proton}
-                \item \textit{PlayOnLinux}
-                \item \textit{Lutris}
+                \item Steam con \href{https://github.com/ValveSoftware/Proton}{\underline{Proton}}, \href{https://www.playonlinux.com/}{\underline{PlayOnLinux}}, \href{https://lutris.net/}{\underline{Lutris}}
+                \item \href{https://www.protondb.com/}{\underline{Protondb}}, base de datos con información de compatibilidad de juegos de Steam
             \end{itemize}
         \end{itemize}
     \end{frame}
@@ -271,24 +271,24 @@
     \section{Preliminares}
 
     \subsection{Físico v.s. Máquina Virtual}
-    \begin{frame}{\secname}{\subsecname}
+     \begin{frame}{\subsecname}{}
         \begin{multicols}{2}
             \textbf{Físico}
-            \begin{enumerate}
+            \begin{itemize}
                 \item \textbf{Pros}
-                \begin{enumerate}
+                \begin{itemize}
                     \item Rápido
                     \item Usa tarjeta gráfica
                     \item Acceso a periféricos
                     \item Más cómodo
                     \item Aprovecha el \textit{Hardware}
-                \end{enumerate}
+                \end{itemize}
                 \item \textbf{Contras}
-                \begin{enumerate}
+                \begin{itemize}
                     \item Tamaño fijo
                     \item Reiniciar para cambiar
-                \end{enumerate}
-            \end{enumerate}
+                \end{itemize}
+            \end{itemize}
             \newpage
             \textbf{Máquina virtual}
             \begin{itemize}
@@ -316,67 +316,19 @@
         \end{multicols}
     \end{frame}
 
-    \subsection{Para los que se lo quieren instalar en físico}
-    \begin{frame}[fragile]{\subsecname}{\secname}
-        \url{https://github.com/guluc3m/linux404} (dualboot-install.md)
-        \begin{enumerate}
-            \pause
-            \item Desfragmentar el disco
-            \begin{enumerate}
-                \item Buscar \textbf{Defrag} en la barra de búsqueda
-                \item \textbf{Desframentar y optimizar unidades}
-                \item Seleccionar disco (normalmente \verb!C:\!).
-                \item \textbf{Optimizar}
-            \end{enumerate}
-            \pause
-            \item (Windows 11) Desactivar \textit{BitLocker}
-            \pause
-            \begin{enumerate}
-                \item Buscar \textbf{BitLocker}, si no aparece, genial.
-                \item Copia de seguridad de la clave
-                \item Desactiva \textit{BitLocker}
-            \end{enumerate}
-            \pause
-            \item Desactivar inicio rápido
-            \begin{enumerate}
-                \item Buscar \textbf{Opciones de Energía}
-                \item \textbf{Comportamiento de los botones de inicio/apagado}
-                \item Desactiva inicio rápido
-                \item \textbf{Guardar Cambios}
-                \item Si no aparece, ejecutar \verb!powercfg.exe /h on! y
-                cuando termines \verb!powercfg.exe /h off! en una CMD.
-            \end{enumerate}
-        \end{enumerate}
-    \end{frame}
-    % Si alguien ha traído un Pen Drive vacío, y no hay suficientes podemos ir
-    %   ayudando.
-
-    \subsection{Para los que se lo quieren instalar en una máquina virtual}
-    \begin{frame}{\secname}{\subsecname}
-        \url{https://github.com/guluc3m/linux404} (vm-install.md)
-        \begin{enumerate}
-            \item Descargar VirtualBox
-            \item Descargar la distro que quieras
-            \item Instalar VirtualBox
-            \item Sigue las instrucciones. Dale suficiente almacenamiento
-                (por ejemplo 32GiB), unos cuantos procesadores y bastante
-                memoria RAM.
-        \end{enumerate}
-    \end{frame}
-    % Si no se ha descargado para entonces copiarla de una Pen Drive.
 
     \subsection{Particiones}
-    \begin{frame}[fragile]{\secname}{\subsecname}
+     \begin{frame}{\subsecname}{}
+        Una forma de dividir y aislar partes del disco.
+        \begin{itemize}
+            \item Partición normal (e.g. \texttt{/}, \texttt{C:}, \texttt{/home}): Una por SO, mas otras particiones que quieras hacer para ficheros
+            \item EFI: Gestor de Arranque
+            \item \textit{swap}: Área de intercambio (Memoria Virtual)
+        \end{itemize}
         \begin{figure}
             \centering
-            \includegraphics[width=0.9\textwidth]{img/partitions.png}
+            \includegraphics[width=0.85\textwidth]{img/partitions.png}
         \end{figure}
-        \begin{itemize}
-            \item \verb!/! (\textit{root}, S.O.)
-            \item \verb!/home! (Archivos personales)
-            \item \verb!EFI! (Gestor de Arranque)
-            \item \verb!swap! (Área de intercambio)
-        \end{itemize}
     \end{frame}
     % Explicar que estamos dividiendo el disco en distintas partes lógicas
     % Explicar qué pueden hacer /home /boot /efi / ...
@@ -386,36 +338,99 @@
     % Hay una opción muy bonita que se llama instalar al lado de Windows que se
     %   decide por ti.
 
-    \subsection{BIOS}
-    \begin{frame}[fragile]{\secname}{\subsecname}
-        \begin{itemize}
-            \item Apaga el ordenador
-            \item Enciende utilizando el botón para entrar en la BIOS
-            (\verb!ESC!, \verb!F11!, \verb!F12!, \verb!DEL!)
-            \item Asegúrate que \textit{Intel(R) Rapid Start Technology} está
-            \textbf{desactivado}
-            \item Si estás instalando una distro \textbf{distinta a Ubuntu},
-            \textbf{desactivar} \textit{«Secure Boot»}
-            \item Arranca desde el USB.
-        \end{itemize}
+
+    \subsection{¿Cómo arranca un SO?}
+     \begin{frame}{\subsecname}{}
+        \begin{enumerate}
+            \item Arranca la BIOS
+            \item La BIOS selecciona el disco de arranque (según configuración)
+            \item La BIOS busca en el disco particiones EFI, y arranca el \textit{boot manager} (según configuración)
+            \item El \textit{boot manager} arranca el SO en su partición
+        \end{enumerate}
+    \end{frame}
+
+    \begin{frame}{\subsecname}{}
+        \begin{figure}
+            \centering
+            \includesvg[inkscapelatex=false,width=.9\textwidth]{img/booting.drawio.svg}
+        \end{figure}
+    \end{frame}
+
+    % Si no se ha descargado para entonces copiarla de un Pen Drive.
+
+
+    %=========================================================================%
+    %==== Métodos de Instalación =============================================%
+    %=========================================================================%
+    \section{Instalación}
+
+    \subsection{Full install}
+     \begin{frame}[fragile]{\subsecname}{}
+        \begin{enumerate}
+            \item Reiniciar y entrar en la BIOS
+            \item Desactivar \textit{Secure boot}
+            \item Arrancar el instalador (LiveUSB)
+            \item Instalar Linux, y crear el resto de particiones
+        \end{enumerate}
+    \end{frame}
+
+    \subsection{Dual Boot}
+     \begin{frame}[fragile]{\subsecname}{}
+        \begin{enumerate}
+            \item Crear una partición para Linux
+            \item Preparar Windows
+            \begin{enumerate}
+                \item Defragmentar el disco
+                \item Desactivar BitLocker
+                \item Desactivar inicio rápido
+            \end{enumerate}
+            \item Reiniciar y entrar en la BIOS
+            \item Desactivar \textit{Secure boot}
+            \item Arrancar el instalador (LiveUSB)
+            \item Instalar Linux en la partición, y crear el resto de particiones
+        \end{enumerate}
+        \bigskip
+        \textbf{Guía:} \href{https://github.com/guluc3m/linux404/blob/main/dualboot-install.md}{\underline{}\texttt{dualboot-install.md}} / \href{https://github.com/guluc3m/linux404/blob/main/dualboot-mac-install.md}{\underline{}\texttt{dualboot-mac-install.md}}
     \end{frame}
     % Pedir que vayan buscando para su modelo de ordenador qué tecla utilizar
     %   para entrar en BIOS.
     % Si no están instalando Ubuntu, pedir que desactiven el Secure Boot
 
-    % \subsection{Arranque}
-    % Una vez lo tengan todos, arrancar desde Linux
-    % No se va a instalar nada todavía.
+    \subsection{Máquina Virtual}
+    \begin{frame}[fragile]{\subsecname}{}
+        \begin{enumerate}
+            \item Instalar \href{https://www.virtualbox.org/}{\underline{VirtualBox}}
+            \item Descargar la ISO de Linux
+            \item Crear la máquina virtual
+            \begin{itemize}
+                \item Mínimo 3GiB RAM, 2 núcleos, 10GB disco
+            \end{itemize}
+            \item Instalar Linux
+        \end{enumerate}
+        \bigskip
+        \textbf{Guía:} \href{https://github.com/guluc3m/linux404/blob/main/vm-install.md}{\underline{}\texttt{vm-install.md}} / \href{https://github.com/guluc3m/linux404/blob/main/vm-mac-install.md}{\underline{}\texttt{vm-mac-install.md}}
+    \end{frame}
+
+
 
     %=========================================================================%
     %==== Instalación ========================================================%
     %=========================================================================%
-    \section{Instalación}
+    \begin{frame}[fragile]{}{}
+        \begin{center}
+            \huge{\textbf{¡A instalar!}}
+            \bigskip
+            \begin{figure}
+                \centering
+                \includegraphics[width=.4\textwidth]{img/usb.png}
+            \end{figure}
+        \end{center}
+    \end{frame}
+
     \subsection{Configuración}
-    \begin{frame}{\secname}{\subsecname}
+     \begin{frame}{\subsecname}{}
         \begin{itemize}
-            \item Seleccionar \textit{Install Linux}
-            \item Para la \textit{eduroam} usad la siguiente configuración:
+            \item Para conectar a \textit{eduroam} usad la siguiente configuración:
             \begin{itemize}
                 \item \textbf{\textit{Security}}: \textit{WPA/WPA2 Enterprise}
                 \item \textbf{\textit{Authentication}}: \textit{Tunnelled TLS}
@@ -425,98 +440,82 @@
                 \item \textbf{\textit{Password}}: La contraseña de aula global.
             \end{itemize}
             \item Si lo pregunta, activad códecs multimedia
-            \item Parad cuando lleguéis a la parte de particionado.
         \end{itemize}
     \end{frame}
     % WiFi de la uni - En una máquina virtual no es necesario
     % Instalar códecs de vídeo
     % Que se paren cuando lleguen a las particiones.
 
-    \subsection{Particionado}
-    \begin{frame}[plain]
-        \begin{tikzpicture}[overlay, remember picture]
-            \node[anchor=center] at (current page.center) {
-                \begin{beamercolorbox}[center]{title}
-                    \huge Particionado
-                \end{beamercolorbox}};
-        \end{tikzpicture}
-    \end{frame}
-    % Vamos a pasar por las mesas para hacer el siguiente paso.
-    % En una máquina virtual que usen el disco entero
-    % Continuar
 
     %=========================================================================%
     %==== Introducción =======================================================%
     %=========================================================================%
     \section{Introducción}
     \subsection{Gestores de Paquetes}
-    \begin{frame}[fragile]{\secname}{\subsecname}
+     \begin{frame}[fragile]{\subsecname}{}
         \begin{multicols}{2}
             \textbf{APT} (Debian, Ubuntu, Mint\ldots)\\
             \begin{lstlisting}[language=bash]
-$ sudo apt update
-$ sudo apt upgrade
-$ sudo apt install <paquete>
-$ sudo apt remove <paquete>
-$ sudo apt search <paquete>
-$ man apt \end{lstlisting}
+sudo apt update && sudo apt upgrade
+sudo apt install <paquete>
+sudo apt remove <paquete>
+sudo apt search <paquete>\end{lstlisting}
             \textbf{dnf} (Fedora, RedHat\ldots)\\
             \begin{lstlisting}[language=bash]
-$ sudo dnf check-update
-$ sudo dnf upgrade
-$ sudo dnf install <paquete>
-$ sudo dnf remove <paquete>
-$ sudo dnf search <paquete>
-$ man dnf \end{lstlisting}
+sudo dnf upgrade
+sudo dnf install <paquete>
+sudo dnf remove <paquete>
+sudo dnf search <paquete>\end{lstlisting}
             \newpage
             \textbf{pacman} (Arch, Manjaro\ldots)\\
             \begin{lstlisting}[language=bash]
-$ sudo pacman -Sy
-$ sudo pacman -Syu
-$ sudo pacman -S <paquete>
-$ sudo pacman -R <paquete>
-$ sudo pacman -Ss <paquete>
-$ man pacman \end{lstlisting}
+sudo pacman -Syu
+sudo pacman -S <paquete>
+sudo pacman -R <paquete>
+sudo pacman -Ss <paquete>\end{lstlisting}
             \textbf{Alternativas}
             \begin{itemize}
-                \item \textbf{synaptic}: Debian, Ubuntu\ldots
-                \item \textbf{nala}: Debian, Ubuntu\ldots
-                \item \textbf{aptitude}: Debian, Ubuntu\ldots
+                \item \href{https://gitlab.com/volian/nala}{\underline{\textbf{nala}}}: Debian, Ubuntu\ldots
+                \item \href{https://github.com/Jguer/yay}{\underline{\textbf{yay}}}: Arch, Manjaro\ldots
+                \item \href{https://github.com/NixOS/nix}{\underline{\textbf{nix}}}
                 \item \textbf{Tienda de aplicaciones}
             \end{itemize}
         \end{multicols}
     \end{frame}
     \subsection{Juego: Adivina qué hace el comando}
-    \begin{frame}[fragile]{\secname}{\subsecname}
+     \begin{frame}[fragile]{\subsecname}{}
         \begin{lstlisting}[language=bash]
 sudo rm -fr /*\end{lstlisting}
         \begin{itemize}
-            \item \textit{«¿Borrar el idioma francés del sistema?»}
+            \item \say{\textit{¿Borrar el idioma francés del sistema?}}
             \pause\\
             \item \textbf{Borra el disco duro entero}
         \end{itemize}
         \begin{lstlisting}[language=bash]
 :(){ :|:& };:\end{lstlisting}
         \begin{itemize}
-            \item \textit{«¿No hace nada?}
+            \item \say{\textit{¿No hace nada?}}
             \pause\\
             \item \textbf{Es una bomba lógica}
         \end{itemize}
         \begin{lstlisting}[language=bash]
 sudo dd if=/dev/random of=/dev/sda\end{lstlisting}
         \begin{itemize}
-            \item \textit{«¿Genera un número aleatorio?}
+            \item \say{\textit{¿Genera un número aleatorio?}}
             \pause\\
             \item \textbf{Te destruye el disco duro}
         \end{itemize}
         \pause
-        \textbf{No ejecutes nada que no sepas que hace}
+
+        \vfill
+        \textbf{No ejecutes nada que no sepas qué hace}
     \end{frame}
     % Nunca ejecutes algo que no sepas qué hace
     % Fuentes
 
     \subsection{Línea de Comandos}
-    \begin{frame}[fragile]{\secname}{\subsecname}
+     \begin{frame}[fragile]{\subsecname}{}
+        \textbf{Comandos básicos:}
         \begin{itemize}
             \item \verb!ls!: LiStar qué hay en el directorio actual.
             \item \verb!cd!: Cambiar de Directorio
@@ -529,7 +528,10 @@ sudo dd if=/dev/random of=/dev/sda\end{lstlisting}
             \item \verb|!!|: Ejecutar el comando anterior
             \item \verb|sudo|: \textit{Super User DO} (Ejecutar como súper usuario)
         \end{itemize}
-        \pause
+    \end{frame}
+
+    \begin{frame}[fragile]{\subsecname}{}
+        \textbf{Directorios:}
         \begin{itemize}
             \item \verb!.!: Directorio actual
             \item \verb!..!: Directorio superior
@@ -539,38 +541,6 @@ sudo dd if=/dev/random of=/dev/sda\end{lstlisting}
         \end{itemize}
     \end{frame}
 
-    \subsection{Ejecutar programas de Windows}
-    \begin{frame}{\secname}{\subsecname}
-        \begin{figure}
-            \centering
-            \begin{subfigure}{.4\textwidth}
-                \centering
-                \includegraphics[width=0.4\textwidth]{img/wine.png}
-                \caption*{Wine}
-            \end{subfigure}
-            \pause
-            \begin{subfigure}{.4\textwidth}
-                \centering
-                \includegraphics[width=0.4\textwidth]{img/lutris.png}
-                \caption*{Lutris (\url{https://lutris.net/})}
-            \end{subfigure}
-            \pause
-        \end{figure}
-        \begin{figure}
-            \centering
-            \begin{subfigure}{.4\textwidth}
-                \centering
-                \includegraphics[width=0.4\textwidth]{img/playonlinux.png}
-                \caption*{PlayOnLinux}
-            \end{subfigure}
-            \pause
-            \begin{subfigure}{.4\textwidth}
-                \centering
-                \includegraphics[width=0.6\textwidth]{img/steam.png}
-                \caption*{Steam}
-            \end{subfigure}
-        \end{figure}
-    \end{frame}
 
     %=========================================================================%
     %==== Conclusión =========================================================%
@@ -589,31 +559,25 @@ sudo dd if=/dev/random of=/dev/sda\end{lstlisting}
     \begin{frame}{Contacto}
         \centering\qrcode[hyperlink,height=0.5\textwidth]{https://t.me/+H9Vppy2xDec0ODQ0}
         \hphantom{}\\
+        \bigskip
         \url{https://t.me/+H9Vppy2xDec0ODQ0}
     \end{frame}
     % Grupo de Telegram (QR), Grupo de Discord
-    \subsection{¿Dónde encontrar las transparencias?}
-    \begin{frame}[plain]{\subsecname}
-        \centering\qrcode[hyperlink,height=0.5\textwidth]{https://github.com/joseaverde/linux-install-party}
-        \hphantom{}\\
-        \url{https://github.com/joseaverde/linux-install-party}
-    \end{frame}
     \subsection{Más información}
-    \begin{frame}{\secname}{\subsecname}
+     \begin{frame}{\subsecname}{}
         \begin{itemize}
-            \item \href{https://github.com/rajayonin/linux-now-what}{GUL — Te has instalado Linux... ahora, ¿qué?}
+            \item \href{https://github.com/guluc3m/linux404}{Guía de instalación de Linux del GUL}
+            \item \href{https://youtu.be/2qZBUa93MQ8}{GUL — Linux en 90' para no desesperarse en las prácticas}
+            \item \href{https://youtu.be/XpQujpVKliA?si=BLPIhepjnb4vW0sw}{L. D. Casais — Te has instalado Linux... ahora, ¿qué?}
+            \item \href{https://github.com/acaldero/uc3m_linux}{A. Calderón — Introducción a Unix/Linux}
+            \item \href{https://github.com/gmorales08/ManualLinux/blob/master/MANUAL_LINUX}{G. Morales — Manual de Linux}
+            \item \href{https://aprendolinux.com}{J. Pons — aprendolinux}
+            \item \href{https://linuxhandbook.com/}{Linux Handbook} y \href{https://linuxize.com/}{Linuxize}
+            \item \href{https://www.tutorialspoint.com/unix/index.htm}{Tutorialspoint — Linux for Beginners}
+            \item \href{https://github.com/rajayonin/cheatsheets/blob/main/vim_cheatsheet.md}{L. D. Casais — rajayonin's Vim cheatsheet}
             \item \href{https://itsfoss.com/}{It's FOSS}
             \item \href{https://wiki.archlinux.org/}{Arch Wiki}
             \item \href{https://stackoverflow.com/}{Stack Overflow} y \href{https://stackoverflow.com/}{Stack Exchange}
-            \item \href{https://stackoverflow.com/}{Linux Handbook} y \href{https://linuxize.com/}{Linuxize}
-            \item \href{https://www.tutorialspoint.com/unix/index.htm}{Tutorialspoint — Linux for Beginners}
-            \item \href{https://github.com/acaldero/uc3m_linux}{A. Calderón — Introducción a Unix/Linux}
-            \item \href{https://aprendolinux.com}{J. Pons — aprendolinux}
-            \item \href{https://github.com/gmorales08/ManualLinux/blob/master/MANUAL_LINUX}{G. Morales — Manual de Linux}
-            \item \href{https://github.com/rajayonin/cheatsheets/blob/main/vim_cheatsheet.md}{L. D. Casais — rajayonin's Vim cheatsheet}
-            \item \href{https://youtu.be/2qZBUa93MQ8}{GUL — Linux en 90' para no desesperarse en las prácticas}
-            \item \href{https://cloud-gul.uc3m.es/s/4qXKozr7DmDSZiN}{GUL — Linux 404: Introducción a GNU/Linux}
-            \item \href{https://github.com/guluc3m/linux404/blob/main/README.md}{GUL — Formas de instalarse Linux}
             \item \href{mailto:info@gul.uc3m.es}{info@gul.uc3m.es} | \href{https://twitter.com/guluc3m}{@guluc3m}
         \end{itemize}
     \end{frame}
