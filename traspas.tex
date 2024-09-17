@@ -322,7 +322,7 @@
         Una forma de dividir y aislar partes del disco.
         \begin{itemize}
             \item Partición normal (e.g. \texttt{/}, \texttt{C:}, \texttt{/home}): Una por SO, mas otras particiones que quieras hacer para ficheros
-            \item EFI: Gestor de Arranque
+            \item EFI: \textit{Boot loaders}
             \item \textit{swap}: Área de intercambio (Memoria Virtual)
         \end{itemize}
         \begin{figure}
@@ -390,7 +390,7 @@
             \item Instalar Linux en la partición, y crear el resto de particiones
         \end{enumerate}
         \bigskip
-        \textbf{Guía:} \href{https://github.com/guluc3m/linux404/blob/main/dualboot-install.md}{\underline{}\texttt{dualboot-install.md}} / \href{https://github.com/guluc3m/linux404/blob/main/dualboot-mac-install.md}{\underline{}\texttt{dualboot-mac-install.md}}
+        \textbf{Guía:} \href{https://github.com/guluc3m/linux404/blob/main/dualboot-install.md}{\underline{}\texttt{dualboot-install.md}} / \href{https://github.com/guluc3m/linux404/blob/main/dualboot-mac-install.md}{\underline{}\texttt{dualboot-mac-install.md}} / \href{https://github.com/guluc3m/linux404/blob/main/dualboot-external-install.md}{\underline{}\texttt{dualboot-external-install.md}}
     \end{frame}
     % Pedir que vayan buscando para su modelo de ordenador qué tecla utilizar
     %   para entrar en BIOS.
@@ -411,6 +411,18 @@
         \textbf{Guía:} \href{https://github.com/guluc3m/linux404/blob/main/vm-install.md}{\underline{}\texttt{vm-install.md}} / \href{https://github.com/guluc3m/linux404/blob/main/vm-mac-install.md}{\underline{}\texttt{vm-mac-install.md}}
     \end{frame}
 
+
+    \subsection{Windows Subsystem for Linux (WSL)}
+    \begin{frame}[fragile]{\subsecname}{}
+        \begin{enumerate}
+            \item Habilitar características de Windows
+            \item Instalar WSL2
+            \item Reiniciar
+            \item Instalar la distro deseada
+        \end{enumerate}
+        \bigskip
+        \textbf{Guía:} \href{https://github.com/guluc3m/linux404/blob/main/wsl-install.md}{\underline{}\texttt{wsl-install.md}}
+    \end{frame}
 
 
     %=========================================================================%
@@ -522,7 +534,7 @@ sudo dd if=/dev/random of=/dev/sda\end{lstlisting}
             \item \verb!pwd!: \textit{Print Working Directory}
             \item \verb!rm!: ReMove (Borrar un archivo)
             \item \verb!cp!: CoPiar un archivo
-            \item \verb!mv!: MoVer un archivo
+            \item \verb!mv!: MoVer un archivo (renombrar)
             \item \verb!cat!: Imprimir qué hay dentro de un archivo
             \item \verb!nano!: Editar un archivo
             \item \verb|!!|: Ejecutar el comando anterior
